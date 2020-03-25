@@ -1,4 +1,5 @@
 const uuid = require('uuid/v4');
+const config = require('../config/config.js');
 
 'use strict';
 
@@ -66,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
     sistema.create({ uf: 'Pernambuco', autorizado: false, base_url: null, nivel_minimo: 0 , lat: 9.115869, lon: -37.661743, zoom: 6.0});
     sistema.create({ uf: 'Piauí', autorizado: false, base_url: null, nivel_minimo: 0 , lat: -7.123047, lon: -42.868552, zoom: 6.0});
     sistema.create({ uf: 'Rio de Janeiro', autorizado: false, base_url: null, nivel_minimo: 0 , lat: -23.155123, lon: -43.731843, zoom: 6.0});
-    sistema.create({ uf: 'Rio Grande do Norte', autorizado: true, base_url: 'https://10.0.2.2/api/v1/', nivel_minimo: 0 , lat: -5.766534, lon: -36.929554, zoom: 7.0});
+    sistema.create({ uf: 'Rio Grande do Norte', autorizado: true, base_url: config.server, nivel_minimo: 0 , lat: -5.766534, lon: -36.929554, zoom: 7.0});
     sistema.create({ uf: 'Rio Grande do Sul', autorizado: false, base_url: null, nivel_minimo: 0 , lat: -30.011979, lon: -53.395143, zoom: 6.0});
     sistema.create({ uf: 'Rondônia', autorizado: false, base_url: null, nivel_minimo: 0 , lat: -11.427548, lon: -63.024710, zoom: 6.0});
     sistema.create({ uf: 'Roraima', autorizado: false, base_url: null, nivel_minimo: 0 , lat: 1.292922, lon: -62.020215, zoom: 6.0});
