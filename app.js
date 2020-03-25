@@ -3,7 +3,7 @@ const rateLimit = require("express-rate-limit");
 const app = express();
 const fs = require('fs');
 const https = require('https');
-const port = process.env.PORT || 443;
+const port = process.env.PORT;
 const router = require('./routes/index.js');
 
 const limiter = rateLimit({

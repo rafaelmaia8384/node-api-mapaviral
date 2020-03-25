@@ -4,20 +4,23 @@
     "password": "rafael110786MYSQL",
     "database": "mapa_viral",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "server": "https://10.0.2.2/api/v1/"
   },
   "test": {
-    "username": "",
-    "password": "",
-    "database": "",
+    "username": "root",
+    "password": "rafael110786MYSQL",
+    "database": "mapa_viral_test",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "server": "https://167.71.99.9/api/v1/"
   },
   "production": {
-    "username": "",
-    "password": "",
-    "database": "",
+    "username": "root",
+    "password": "rafael110786MYSQL",
+    "database": "mapa_viral_prod",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "server": "https://167.71.99.9/api/v1/"
   }
 }
