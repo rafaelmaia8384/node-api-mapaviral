@@ -1,0 +1,29 @@
+{
+  "name": "mapa-viral",
+  "version": "1.0.0",
+  "description": "API do Mapa do Mapa Viral",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=development PORT=443 nodemon app.js",
+    "test": "NODE_ENV=test PORT=443 nodemon app.js",
+    "prod": "NODE_ENV=production PORT=443 pm2 start app.js --name mapa-viral"
+  },
+  "author": "Rafael Paiviandre Maia",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "crypto": "^1.0.1",
+    "express": "^4.16.4",
+    "express-rate-limit": "^5.1.1",
+    "express-subdomain": "^1.0.5",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mysql2": "^1.7.0",
+    "node-cron": "^2.0.3",
+    "nodemon": "^1.18.10",
+    "pm2": "^4.2.3",
+    "random-location": "^1.1.2",
+    "sequelize": "^5.21.1",
+    "uuid": "^3.3.3"
+  }
+}
