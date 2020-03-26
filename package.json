@@ -5,8 +5,10 @@
   "main": "app.js",
   "scripts": {
     "dev": "NODE_ENV=development PORT=5000 nodemon app.js",
-    "test": "NODE_ENV=test PORT=4000 nodemon app.js",
-    "prod": "NODE_ENV=production PORT=3000 pm2 start app.js --name mapa-viral"
+    "test_nodemon": "NODE_ENV=test PORT=4000 nodemon app.js",
+    "prod_nodemon": "NODE_ENV=production PORT=3000 nodemon app.js",
+    "test": "NODE_ENV=test PORT=4000 pm2 start app.js --name mapa-viral-test",
+    "prod": "NODE_ENV=test PORT=3000 pm2 start app.js --name mapa-viral-prod"
   },
   "author": "Rafael Paiviandre Maia",
   "license": "ISC",
