@@ -1,5 +1,7 @@
 'use strict';
 
+const JOB_MIN_TIME_MINUTES = 5;
+
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -42,7 +44,7 @@ db.Sequelize = Sequelize;
 console.log();
 
 //Cron job para estatísticas e HeatMap
-cron.schedule('0 */5 * * * *', async () => {
+cron.schedule(`0 */${JOB_MIN_TIME_MINUTES} * * * *`, async () => {
     const Op = db.Sequelize.Op;
     const usuariosTotais = await db.usuarios.count({ col: 'id' });
     const usuariosAssintomaticos = await db.usuarios.count({ col: 'id', where: { s1: false, s2: false, s3: false, s4: false, s5: false, s6: false, s7: false, s8: false, s9: false, s10: false, s11: false, }});
