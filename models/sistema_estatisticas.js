@@ -5,9 +5,9 @@ const uuid = require('uuid/v4');
 module.exports = (sequelize, DataTypes) => {
   const sistema_estatisticas = sequelize.define('sistema_estatisticas', {
         id: {
-            primaryKey: true,
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
         },
         s0: {
             type: DataTypes.INTEGER, 

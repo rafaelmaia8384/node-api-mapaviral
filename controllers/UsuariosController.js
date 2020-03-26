@@ -191,6 +191,20 @@ class UsuariosController {
         }
     }
 
+    static async evolucaoSintomas(request, response) {
+        try {
+            const s = request.params.s;
+            const evolucao = await db.sistema_estatisticas.findAll({ 
+                where: {}, 
+                order: [['updatedAt', 'DESC']], limit: 1, });
+            ServerResponse.success(response, 'Estatísticas obtidas.', estatisticas);
+        }
+        catch(error) {
+            console.log('Error: ' + error);
+            ServerResponse.error(response, 'Erro ao obter estatísticas do sistema. Tente novamente em instantes.');
+        }
+    }
+
     static async excluirUsuario(request, response) {
         try {
             const id_aparelho = request.headers['device'];
