@@ -237,8 +237,8 @@ class UsuariosController {
                 const latitude = usuarios[i].lat;
                 const longitude = usuarios[i].lon;
                 const n = usuarios[i].n;
-                const latlon = randomLocation.randomCirclePoint({latitude: latitude, longitude: longitude}, 1000);
                 for (var j = 0; j < 50; j++) {
+                    const latlon = randomLocation.randomCirclePoint({latitude: latitude, longitude: longitude}, 1000);
                     const local = {
                         id_usuario: id,
                         n: n,
