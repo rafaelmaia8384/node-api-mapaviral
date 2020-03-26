@@ -9,18 +9,18 @@
   },
   "test": {
     "username": "root",
-    "password": "rafael123",
+    "password": "rafael110786MYSQL",
     "database": "mapa_viral_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "server": "https://200.137.6.49:4000/api/v1/"
+    "server": "https://167.71.99.9:4000/api/v1/"
   },
   "production": {
     "username": "root",
-    "password": "rafael123",
+    "password": "rafael110786MYSQL",
     "database": "mapa_viral_prod",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "server": "https://200.137.6.49:3000/api/v1/"
+    "server": "https://167.71.99.9:3000/api/v1/"
   }
 }

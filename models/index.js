@@ -1,6 +1,6 @@
 'use strict';
 
-const JOB_MIN_TIME_MINUTES = 1;
+const JOB_MIN_TIME_MINUTES = 5;
 
 const fs = require('fs');
 const path = require('path');
