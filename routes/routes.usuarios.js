@@ -28,6 +28,6 @@ usuariosRouter.get('/listar/:lat/:lon/:distance', (check), UsuariosController.li
 usuariosRouter.get('/perfil/:id', (check), UsuariosController.obterPerfil);
 usuariosRouter.get('/estatisticas', (check), UsuariosController.obterEstatisticas);
 usuariosRouter.get('/seed/:qnt/:raio/:lat/:lon', UsuariosController.seed);
-usuariosRouter.get('/seedlocal', UsuariosController.seedLocal);
+usuariosRouter.get('/seedlocais', UsuariosController.seedLocais);
 
 module.exports = usuariosRouter;

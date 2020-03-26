@@ -229,21 +229,24 @@ class UsuariosController {
         else return 0;
     }
 
-    static async seedLocal(request, response) {
+    static async seedLocais(request, response) {
         try {
-            const id = '328a691d-99ff-4057-b410-3e7f8bf3631b';
-            var latitude = -5.2144;
-            var longitude = -37.3096;
-            for (var i = 0; i < 300; i++) {
-                latitude += (Math.random() - 0.5) / 1000;
-                longitude += (Math.random() - 0.5) / 1000;
-                const local = {
-                    id_usuario: id,
-                    n: 2,
-                    lat: latitude,
-                    lon: longitude,
-                };
-                await db.usuarios_locais.create(local);
+            const usuarios = db.usuarios.findAll();
+            for (var i = 0; i < usuarios.length; i++) {
+                const id = usuarios[i].id;
+                const latitude = usuarios[i].lat;
+                const longitude = usuarios[i].lon;
+                const n = usuarios[i].n;
+                const latlon = randomLocation.randomCirclePoint({latitude: latitude, longitude: longitude}, 1000);
+                for (var j = 0; j < 50; j++) {
+                    const local = {
+                        id_usuario: id,
+                        n: n,
+                        lat: latlon.latitude,
+                        lon: latlon.longitude,
+                    };
+                    await db.usuarios_locais.create(local);
+                }
             }
             ServerResponse.success(response, 'OK.');
         }
