@@ -11,9 +11,9 @@ const limiter = rateLimit({
     max: 100, // 100 solicitacoes por minuto
 });
 
-const key  = fs.readFileSync('https/selfsigned.key', 'utf8');
-const cert = fs.readFileSync('https/selfsigned.crt', 'utf8');
-const options = { key: key, cert: cert };
+// const key  = fs.readFileSync('https/selfsigned.key', 'utf8');
+// const cert = fs.readFileSync('https/selfsigned.crt', 'utf8');
+// const options = { key: key, cert: cert };
   
 app.use(limiter);
 app.use(express.json());
@@ -22,10 +22,14 @@ app.use('/api/v1/data', express.static('data'));
 
 router(app);
 
-const server = https.createServer(options, app);
+// const server = https.createServer(options, app);
 
-server.listen(port, () => {
-    console.log("App listening on port: " + port);
+// server.listen(port, () => {
+//     console.log("App listening on port: " + port);
+// });
+
+app.listen(port, () => {
+	console.log('App listening on port ' + port);
 });
 
 //Editar os termos de uso
