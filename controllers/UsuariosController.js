@@ -232,7 +232,9 @@ class UsuariosController {
     static async seedLocais(request, response) {
         try {
             const usuarios = db.usuarios.findAll();
+            console.log('HELLO');
             for (var i = 0; i < usuarios.length; i++) {
+                console.log('WORLD');
                 const id = usuarios[i].id;
                 const latitude = usuarios[i].lat;
                 const longitude = usuarios[i].lon;
