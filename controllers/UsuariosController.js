@@ -8,6 +8,7 @@ const Op = db.Sequelize.Op;
 class UsuariosController {
 
     static DISTANCIA_MINIMA_ALERTA = 50;
+    static FATOR_DIVISAO_SINTOMAS = 1;
 
     static async cadastrarUsuario(request, response) {
         try {
@@ -194,14 +195,17 @@ class UsuariosController {
     static async evolucaoSintomas(request, response) {
         try {
             const s = request.params.s;
-            const evolucao = await db.sistema_estatisticas.findAll({ 
-                where: {}, 
-                order: [['updatedAt', 'DESC']], limit: 1, });
-            ServerResponse.success(response, 'Estatísticas obtidas.', estatisticas);
+            const evolucao = await db.sistema_estatisticas.findAll({
+                where: db.Sequelize.literal(`${s} IS TRUE AND id % ${UsuariosController.FATOR_DIVISAO_SINTOMAS} = 0`), 
+                order: [['updatedAt', 'DESC']], 
+                limit: 100, 
+                attributes: [[`${s}`, 'num'], 'updatedAt'],
+            });
+            ServerResponse.success(response, 'Evolução obtida.', evolucao);
         }
         catch(error) {
             console.log('Error: ' + error);
-            ServerResponse.error(response, 'Erro ao obter estatísticas do sistema. Tente novamente em instantes.');
+            ServerResponse.error(response, 'Erro ao obter evolução.');
         }
     }
 

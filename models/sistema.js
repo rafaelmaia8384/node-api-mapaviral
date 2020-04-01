@@ -75,6 +75,7 @@ module.exports = (sequelize, DataTypes) => {
     sistema.create({ uf: 'São Paulo', autorizado: false, base_url: null, nivel_minimo: 0 , lat: -22.987423, lon: -49.055359, zoom: 6.0});
     sistema.create({ uf: 'Sergipe', autorizado: false, base_url: null, nivel_minimo: 0 , lat: -10.576300, lon: -37.449705, zoom: 7.0});
     sistema.create({ uf: 'Tocantins', autorizado: false, base_url: null, nivel_minimo: 0 , lat: -10.690748, lon: -48.655211, zoom: 6.0});
+    sistema.create({ uf: 'California', autorizado: true, base_url: config.server, nivel_minimo: 0 , lat: -5.766534, lon: -36.929554, zoom: 7.0});
   });
   return sistema;
 };
